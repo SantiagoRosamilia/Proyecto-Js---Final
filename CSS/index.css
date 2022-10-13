@@ -243,6 +243,14 @@ header {
 }
 
 /* Contenido seccion productos */
+
+.contenidonovisible{
+    display: none;
+}
+.contenidovisible{
+    display: inline;
+}
+
 .titulo-inicio{
     display: flex;
     justify-content: center;
