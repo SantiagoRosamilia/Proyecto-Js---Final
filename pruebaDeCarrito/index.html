@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="indexcarrito.css">
+    <title>Prueba de carrito</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body>
+    
+    <p>Tienes más de 18 años?</p>
+    <input id="si" type="radio" value="">SI 
+    <input id="no" type="radio" value="">NO 
+
+    <div class="titulo-inicio">
+        <h3>Productos varios</h3>
+        <a data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><img class="carritoCompras" src="carritoCompras1.png" alt="Carrito Compras"></a>
+
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Productos seleccionados <hr> </h5> 
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="productosCarrito">
+
+                </div>
+                <br>
+                <p class="precioProducto">Precio total: $<span id="precioTotal">0</span> </p>
+            </div>
+        </div>
+    </div>
+        
+        <!-- <div class="producto-a">
+            <div class="info-p">
+                <img src="./Imagenes/cerveza corona.webp" alt="Cerveza Corona">
+                <p>Corona</p>
+                <p>$700</p>
+            </div>
+            <div class="input">
+                <input type="button" id="agregar-1" value="Agregar +1"> 
+            </div>  
+        </div>
+
+        <div class="producto-a">
+            <div class="info-p">
+                <img src="./Imagenes/Coca-cola-Sabor-Original-1-5-Lt-2-245092.webp" alt="Coca cola">
+                <p>Coca Cola</p>
+                <p>$700</p>
+            </div>
+            <div class="input">
+                <input type="button" id="agregar-1" value="Agregar +1"> 
+            </div>  
+        </div>
+
+        <div class="producto-a">
+            <div class="info-p">
+                <img src="./Imagenes/gaseosas/Cepita.webp" alt="Cepita">
+                <p>Cepita</p>
+                <p>$700</p>
+            </div>
+            <div class="input">
+                <input type="button" id="agregar-1" value="Agregar +1"> 
+            </div>  
+        </div>
+
+        <div class="producto-a">
+            <div class="info-p">
+                <img src="./Imagenes/Aperitivos/vodka.webp" alt="Vodka">
+                <p>Vodka Absolute</p>
+                <p>$2756</p>
+            </div>
+            <div class="input">
+                <input type="button" id="agregar-1" value="Agregar +1"> 
+            </div>  
+        </div>
+    </div>  -->
+
+    <main class="contenedor-productos">
+        <div class="producto-ind">
+
+        </div>
+    </main>
+
+    <script src="index.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

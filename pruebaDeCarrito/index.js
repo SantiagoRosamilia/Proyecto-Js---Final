@@ -1,3 +1,4 @@
+
 let stockProductos = [
     {id:1, nombre: "Cerveza Corona", precio: 700, cantidad: 1, img: './Imagenes/cerveza corona.webp'},
     {id:2, nombre: "Coca-Cola", precio: 400, cantidad: 1, img: './Imagenes/Coca-cola-Sabor-Original-1-5-Lt-2-245092.webp'},
@@ -5,27 +6,7 @@ let stockProductos = [
     {id:4, nombre: "Vodka Absolute", precio: 2700, cantidad: 1, img: './Imagenes/Aperitivos/vodka.webp'}
 ]
 
-const botonSi = document.getElementById('Edad-si')
-const botonNo = document.getElementById('Edad-no')
 
-let contenidoTotal = document.getElementById('contenido')
-
-//Mayor de edad o no 
-botonSi.addEventListener('click', function visto(){
-    contenidoTotal.removeAttribute('class', 'contenidonovisible')
-    contenidoTotal.setAttribute('class', 'contenidovisible')
-}
-)
-botonNo.addEventListener('click', function noVisto(){
-    console.log('No sos mayor')
-    contenidoTotal.removeAttribute('class', 'contenidovisible')
-    contenidoTotal.setAttribute('class', 'contenidonovisible')
-    Swal.fire({
-        icon: 'error',
-        title: 'No tienes la edad suficiente',
-    })
-    
-})
 
 const contenedorProductos = document.querySelector('.producto-ind')
 const contenedorCarrito = document.querySelector('.productosCarrito')
@@ -44,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 })
 
-//Crea la card del producto
 stockProductos.forEach((producto) => {
     const div = document.createElement('div')
     div.classList.add('producto-a')
@@ -60,23 +40,10 @@ stockProductos.forEach((producto) => {
     `
     contenedorProductos.appendChild(div)
 
-    //Boton para agregar al carrito
     const boton = document.querySelector(`#agregar${producto.id}`)
     boton.addEventListener('click', () => {
         agregarAlCarrito(producto.id)
-
-        const Toast = Swal.mixin({
-            toast: true,
-            position: 'top-end',
-            showConfirmButton: false,
-            
-            didOpen: (toast) => {
-              toast.addEventListener('mouseenter', Swal.stopTimer)
-              toast.addEventListener('mouseleave', Swal.resumeTimer)
-            }
-          })
-          
-          Toast.fire({
+        Swal.fire({
             width: '300px',
             background: '#DB7E01', 
             color: '#FFFFFF',
@@ -86,14 +53,10 @@ stockProductos.forEach((producto) => {
             showConfirmButton: false,
             timer: 1500
           })
-
-        
     })
     
 })
 
-
-//DOM del carrito
 const agregarAlCarrito = (prodId) => {
     const existe = carrito.some (prod => prod.id === prodId)
 
@@ -112,7 +75,6 @@ const agregarAlCarrito = (prodId) => {
 actualizarCarrito()
 }
 
-//Card en DOM del carrito
 const actualizarCarrito = () => {
 
     contenedorCarrito.innerHTML = ""
@@ -134,7 +96,6 @@ const actualizarCarrito = () => {
     precioTotal.innerText = carrito.reduce((acc, prod) => acc + prod.precio, 0)
 }
 
-//Eliminar del carrito
 const eliminarDelCarrito = (prodId) => {
     const item = carrito.find((prod) => prod.id === prodId)
     const indice = carrito.indexOf(item)
@@ -142,3 +103,16 @@ const eliminarDelCarrito = (prodId) => {
     actualizarCarrito()
 }
 
+menor18.addEventListener('click', alertaMenor)
+
+function alertaMenor () {
+
+    Swal.fire({
+        icon: 'error',
+        title: 'No tienes la edad suficiente',
+        
+    })
+   
+}
+
+/* https://www.youtube.com/watch?v=wbf-jBF8YuU */
